@@ -1,3 +1,44 @@
+/* animations */
+@keyframes sidebarMover {
+    0% {
+        margin-left: -100%;
+    }
+
+    100% {
+        margin-left: 0%;
+    }
+}
+
+@keyframes dropdownSectionMover {
+    0% {
+        height: 0px;
+    }
+
+    100% {
+        height: 200px;
+    }
+}
+
+@keyframes dropdownSectionMoverUp {
+    0% {
+        height: 200px;
+    }
+
+    100% {
+        height: 0px;
+    }
+}
+
+@keyframes todoHider {
+    0% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
+}
+
 /* main layout */
 .c-shadow {
     box-shadow: rgba(0, 0, 0, 0.411) 0px 10px 15px;
@@ -14,21 +55,90 @@
     position: relative;
 }
 
+.c-input {
+    background-color: rgb(255, 255, 255);
+    border: rgb(167, 167, 167) 2px solid;
+    border-radius: 5px;
+    padding: 8px 12px;
+}
+
+.c-input1 {
+    background-color: rgb(255, 255, 255);
+    border: rgb(167, 167, 167) 2px solid;
+    border-radius: 5px;
+    padding: 8px 12px;
+}
+
+
+.drop-down-arrow {
+    width: 30px;
+    height: 30px;
+    transition: 500ms;
+}
+
+.drop-down-arrow::before {
+
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-section-default {
+    animation-name: dropdownSectionMoverUp;
+    animation-duration: 700ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+}
+
+.dropdown-section {
+    animation-name: dropdownSectionMover;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+.drop-down-icon {
+    transform: rotate(180deg);
+    transition: 500ms;
+}
+
+
+.todo-item {
+    animation-name: todoHider;
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+
+@media (min-width: 991px) {
+
+    .dropdown-section {
+        /* animation-iteration-count: 0; */
+    }
+
+
+}
+
+
 
 @media (max-width: 767px) {
     .sidebar {
         position: absolute;
     }
-}
 
+    @keyframes dropdownSectionMoverUp {
+        0% {
+            height: 200px;
+        }
 
-/* animations */
-@keyframes sidebarMover {
-    0% {
-        margin-left: -100%;
+        100% {
+            height: 0px;
+        }
     }
 
-    100% {
-        margin-left: 0%;
-    }
 }
